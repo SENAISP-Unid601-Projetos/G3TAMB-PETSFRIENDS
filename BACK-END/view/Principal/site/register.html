@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/register.css">
+    <title>Cadastro - Pet's Friends</title>
+    <img class="logo" src="images/logo-default-392x116.png" alt="Imagem do Header">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-image">
+            <img src="images/cadastro.jpg" alt="Imagem de Cadastro">
+        </div>
+        <div class="form">
+            <form method="POST" action="javascript:void(0)" id="registerForm">
+                <div class="form-header">
+                    <div class="title">
+                        <br>
+                        <h1>Cadastre-se</h1>
+                    </div>
+                    <p>Já tem uma conta? <a href="login.html">Faça login aqui</a>.</p>
+                </div>
+                <!-- Foto de perfil e câmera -->
+                <div class="profile-box">
+                    <img id="profilePhoto" src="images/icone2.png" alt="Foto de perfil padrão" onclick="openCamera()">
+                </div>
+                <div class="input-group">
+                    <!-- Nome completo -->
+                    <div class="input-box">
+                        <label for="fullName">Nome Completo</label>
+                        <input id="fullName" type="text" name="fullName" placeholder="Digite seu nome completo" required>
+                        <span class="error-message" id="nameError"></span>
+                    </div>
+
+                    <!-- E-mail -->
+                    <div class="input-box">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+
+                    <!-- CPF -->
+                    <div class="input-box">
+                        <label for="cpf">CPF</label>
+                        <input id="cpf" type="text" name="cpf" placeholder="Digite seu CPF" required>
+                        <span class="error-message" id="cpfError"></span>
+                    </div>
+
+                    <!-- Data de Nascimento -->
+                    <div class="input-box">
+                        <label for="dateOfBirth">Data de Nascimento</label>
+                        <input id="dateOfBirth" type="date" name="dateOfBirth" required>
+                        <span class="error-message" id="dobError"></span>
+                    </div>
+
+                    <!-- Celular -->
+                    <div class="input-box">
+                        <label for="number">Celular</label>
+                        <input id="number" type="tel" name="number" placeholder="(xx) xxxx-xxxx" required>
+                        <span class="error-message" id="numberError"></span>
+                    </div>
+
+                    <!-- Senha -->
+                    <div class="input-box">
+                        <label for="password">Senha</label>
+                        <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
+                        <span class="error-message" id="passwordError"></span>
+                    </div>
+
+                    <!-- Confirmação de senha -->
+                    <div class="input-box">
+                        <label for="confirmPassword">Confirme sua Senha</label>
+                        <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Digite sua senha novamente" required>
+                        <span class="error-message" id="confirmPasswordError"></span>
+                    </div>
+                </div>
+
+                <div class="continue-button">
+                    <button type="submit">Continuar</button>
+                </div>
+            </form>
+
+            <!-- Mensagem de sucesso -->
+            <div class="success-message" id="successMessage">
+                <i>✔</i> Cadastro realizado com sucesso!
+            </div>
+        </div>
+    </div>
+
+    <script src="js/register.js"></script>
+
+</body>
+
+</html>

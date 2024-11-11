@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Animal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="editar-adm.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-header">
+            <h2>Editar Dados do Animal</h2>
+        </div>
+        <form id="edit-animal-form"  action="javascript:void(0)" method="POST">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" class="form-control" id="nome" name="nome">
+            </div>
+            <div class="form-group">
+                <label for="raca">Raça:</label>
+                <input type="text" class="form-control" id="raca" name="raca">
+            </div>
+            <div class="form-group">
+                <label for="idade">Idade:</label>
+                <input type="number" class="form-control" id="idade" name="idade">
+            </div>
+            <div class="form-group">
+                <label for="diagnostico">Diagnóstico:</label>
+                <input type="text" class="form-control" id="diagnostico" name="diagnostico">
+            </div>
+            <div class="form-group">
+                <label for="sexo">Sexo:</label>
+                <select class="form-control" id="sexo" name="sexo">
+                    <option value="macho">Macho</option>
+                    <option value="femea">Fêmea</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="status">Status:</label>
+                <select class="form-control" id="status" name="status">
+                    <option value="disponivel">Disponível para Adoção</option>
+                    <option value="adotado">Adotado</option>
+                    <option value="reservado">Reservado</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="estado">Estado de Saúde:</label>
+                <input type="text" class="form-control" id="estado" name="estado">
+            </div>
+            <div class="form-group">
+                <label for="estado">Estado de Saúde:</label>
+                <input type="text" class="form-control" id="estado" name="estado">
+            </div>
+            <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+        </form>
+    </div>
+
+</body>
+</html>

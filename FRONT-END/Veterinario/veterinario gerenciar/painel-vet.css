@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f9fc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://example.com/background-pet.jpg'); /* Link para uma imagem de fundo amigável */
+    background-size: cover;
+    background-position: center;
+    color: #444;
+    position: relative;
+}
+
+/* Container Principal */
+.container {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    width: 350px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #ff6f61;
+    font-size: 26px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Estilos dos Botões */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 15px 0;
+    background-color: #ff6f61;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: #ff8a75;
+    transform: translateY(-2px);
+}
+
+/* Ícones e Estilo Amigável */
+.btn i {
+    margin-right: 10px;
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+/* Rodapé */
+footer {
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+    color: #777;
+}

@@ -1,0 +1,146 @@
+/* profile.css */
+h2{
+    color: #000;
+  }
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+.logo {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 300px;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #d89f3b;
+    padding-bottom: 20px;
+}
+
+.profile-photo {
+    flex: 0 0 120px;
+    margin-right: 20px;
+}
+
+.profile-photo img {
+    width: 100%;
+    border-radius: 50%;
+    border: 4px solid #d89f3b;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.profile-photo-section {
+    text-align: center;
+    margin-bottom: 20px;
+    }
+
+.profile-photo-section img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #d89f3b;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+.info {
+    flex: 1;
+}
+
+.info p {
+    margin: 10px 0;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.info strong {
+    color: #d89f3b;
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #d89f3b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.2s;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    }
+
+    label {
+    margin-top: 15px;
+    color: #333;
+    font-weight: bold;
+    }
+
+    input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    }
+
+    .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    }
+
+    .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    }
+
+    .close:hover {
+    color: #000;
+    }
+button:hover {
+    background-color: #c68e31;
+    transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+    .profile-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .profile-photo {
+        margin: 0 0 15px 0;
+    }
+}

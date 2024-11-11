@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <title>Cancelar Adoção - Pet's Friends</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+   <!-- Stylesheets-->
+   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:300i,400,400i,700%7CMontserrat:400,500,600,700%7CPlayfair+Display:400,700,700i%7COswald:400,700,700i">
+   <link rel="stylesheet" href="css/bootstrap.css">
+   <link rel="stylesheet" href="css/fonts.css">
+   <link rel="stylesheet" href="css/style.css">
+   <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+  </head>
+  <body>
+    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <div class="preloader">
+      <div class="preloader-body">
+        <div class="cssload-container">
+          <div class="cssload-speeding-wheel"></div>
+        </div>
+        <p>Carregando...</p>
+      </div>
+    </div>
+    <div class="page">
+      <header class="section page-header">
+        <div class="rd-navbar-wrap">
+          <nav class="rd-navbar rd-navbar-classic rd-navbar-classic-minimal" data-layout="rd-navbar-fixed">
+            <div class="rd-navbar-main-outer">
+              <div class="rd-navbar-main">
+                <div class="rd-navbar-panel">
+                  <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                  <div class="rd-navbar-brand">
+                    <a class="brand" href="index.html"><img class="brand-logo-dark" src="images/logo-default-392x116.png" alt="" width="196" height="58"/></a>
+                  </div>
+                </div>
+                <div class="rd-navbar-main-element">
+                    <div class="rd-navbar-nav-wrap">
+                      <!-- RD Navbar Nav-->
+                      <ul class="rd-navbar-nav">
+                        <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Casa</a>
+                        </li>
+                        <li class="rd-nav-item"><a class="rd-nav-link" href="about.html">Sobre Nós</a>
+                        </li>
+                        <li class="rd-nav-item"><a class="rd-nav-link" href="typography.html">Ajuda</a>
+                        </li>
+                        <li class="rd-nav-item "><a class="rd-nav-link" href="contacts.html">Denunciar</a>
+                        </li>
+                        
+                      </ul>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <section class="section-page-title" style="background-image: url(images/claro2.jpeg); background-size: cover;">
+        <div class="container">
+          <h1 class="page-title">Cancelar Adoção</h1>
+        </div>
+      </section>
+      <section class="breadcrumbs-custom">
+        <div class="container">
+          <ul class="breadcrumbs-custom-path">
+            <li><a href="index.html">Casa</a></li>
+            <li class="active">Cancelar </li>
+          </ul>
+        </div>
+      </section>
+      <section class="section section-md">
+        <div class="container">
+          <div class="row row-50">
+            <div class="col-lg-8">
+              <h2>Formulário de Cancelamento</h2>
+              <p>Preencha o formulário abaixo para cancelar a adoção.</p>
+              <!-- Formulário de Cancelamento de Adoção -->
+              <form class="rd-mailform text-left rd-form" data-form-output="form-output-global" data-form-type="cancel" method="POST" action="bat/cancel-adoption.php">
+                <div class="row row-30">
+                  <div class="col-sm-6">
+                    <div class="form-wrap">
+                      <label class="form-label" for="user-fullname">Nome Completo *</label>
+                      <input class="form-input" id="user-fullname" type="text" name="user-fullname" data-constraints="@Required">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-wrap">
+                      <label class="form-label" for="user-email">E-mail *</label>
+                      <input class="form-input" id="user-email" type="email" name="user-email" data-constraints="@Email @Required">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-wrap">
+                      <label class="form-label" for="animal-name">Nome do Animal *</label>
+                      <input class="form-input" id="animal-name" type="text" name="animal-name" data-constraints="@Required">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-wrap">
+                      <label class="form-label" for="animal-breed">Raça do Animal *</label>
+                      <input class="form-input" id="animal-breed" type="text" name="animal-breed" data-constraints="@Required">
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-wrap">
+                      <label class="form-label" for="cancel-reason">Motivo do Cancelamento *</label>
+                      <textarea class="form-input" id="cancel-reason" name="cancel-reason" data-constraints="@Required"></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-button group-sm text-left">
+                  <button class="button button-primary" type="submit">Cancelar Adoção</button>
+                </div>
+              </form>
+            </div>
+            <div class="col-lg-4">
+                <ul class="contact-list">
+                    <li>
+                        <p class="contact-list-title">Endereço</p>
+                        <div class="contact-list-content"><span class="icon mdi mdi-map-marker icon-primary"></span><a href="#">São Paulo, Tambaú, 200 Rua Bela Vista.</a></div>
+                    </li>
+                    <li>
+                        <p class="contact-list-title">Telefone</p>
+                        <div class="contact-list-content"><span class="icon mdi mdi-phone icon-primary"></span><a href="tel:#">+3673-8951</a><span>, </span><a href="tel:#">+(19) 98982-2762 </a></div>
+                    </li>
+                    <li>
+                        <p class="contact-list-title">E-mail</p>
+                        <div class="contact-list-content"><span class="icon mdi mdi-email-outline icon-primary"></span><a href="mailto:#">petsfriends@gmail.com</a></div>
+                    </li>
+                    <li>
+                        <p class="contact-list-title">Horário de funcionamento</p>
+                        <div class="contact-list-content"><span class="icon mdi mdi-clock icon-primary"></span>
+                            <ul class="list-xs">
+                                <li>Estamos abertos 24 horas por dia, todos os dias da semana. Nossa equipe está disponível ininterruptamente para atender emergências e prestar suporte a qualquer animal que precise de ajuda.</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <br>  
+                </ul>   
+            </div>
+          </div>
+          
+        </div>
+      </section>
+      
+      <section class="section parallax-container" data-parallax-img="images/fundqsn2.png">
+        <div class="parallax-content section-lg context-dark text-center">
+          <div class="container"> 
+            <div class="row justify-content-md-center row-30"> 
+              <div class="col-md-9 col-lg-6">
+                <!-- RD Mailform-->
+              </div>
+            </div>
+            <h2>ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</h2>
+          </div>
+          <h2>ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</h2>
+        </div>
+      </section>
+      <!-- Page Footer-->
+      <footer class="section bg-default section-xs-type-1 footer-minimal">
+        <div class="container">
+          <div class="row row-30 align-items-lg-center justify-content-lg-between">
+            <div class="col-lg-2">
+              <div class="footer-brand"><img src="images/logo-dark-142x58.png" alt="" width="142" height="58"/></a></div>
+            </div>
+            <div class="col-lg-10">
+              <div class="footer-nav">
+                <ul class="rd-navbar-nav">
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Casa</a></li>
+                  <li class="rd-nav-item active"><a class="rd-nav-link" href="about.html">Sobre nós </a></li>
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="typography.html">Ajuda </a></li>
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Denunciar</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <section class="bg-gray-100 section-xs text-center">
+        <div class="container">
+          <p class="rights"><span>&copy;&nbsp; </span><span class="copyright-year"></span><span>&nbsp;</span><span>All Rights Reserved</span><span>.&nbsp;</span>Design&nbsp;by&nbsp;<a class="link-underline" href="https://www.templatemonster.com/">TemplateMonster</a></p>
+        </div>
+      </section>
+    </div>
+    <!-- Global Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
+    <!-- Javascript-->
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

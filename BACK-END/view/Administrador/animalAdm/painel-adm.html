@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Administrador - Pet's Friends</title>
+    <link rel="stylesheet" href="painel-adm.css">
+    <!-- Ícones do Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMC6Jc/3paNdF+7FvU0BlDHz9ydS9tXwhIM8jrB" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1>Painel do Administrador</h1>
+        <button class="btn" onclick="abrirCadastroAnimal()">Cadastrar Animal</button>
+        <a href="tela-animal.html" class="btn"><i class="fas fa-paw"></i> Cadastrar Animal</a>
+    </div>
+    <footer>
+        <p>&copy; 2024 Pet's Friends - Todos os direitos reservados</p>
+    </footer>
+</body>
+<script>
+    function abrirCadastroAnimal(){
+        open("/TelaAnimalAdm", "_self");
+    }
+</script>
+</html>
