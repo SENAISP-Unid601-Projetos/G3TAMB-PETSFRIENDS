@@ -6,6 +6,12 @@ async function consultaVet(req, res) {
     res.json(resposta);
 }
 
+async function consultaVets(req, res) {
+    //const dados = req.body;
+    const resposta = await veterinarios.getVeterinarios();
+    res.json(resposta);
+}
+
 async function cadastraVet(req, res) {
     const dados = req.body;
     const resposta = await veterinarios.insertVeterinario(dados);
@@ -14,3 +20,4 @@ async function cadastraVet(req, res) {
 
 exports.consultaVet = consultaVet;
 exports.cadastraVet = cadastraVet;
+exports.consultaVets = consultaVets;

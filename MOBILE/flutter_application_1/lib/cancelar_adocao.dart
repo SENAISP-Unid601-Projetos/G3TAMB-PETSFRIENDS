@@ -17,8 +17,7 @@ class Cancelaradocao extends StatelessWidget {
 
 class MinhasAdocoesPage extends StatelessWidget {
   final List<Adocao> adocoes = [
-    Adocao('Nome: Tete', 'Raça: Labrador Retriever', 'assets/images/labrador.webp'),
-    Adocao('Nome: Mimi', 'Raça: Gato Persa', 'assets/images/persa.jpg'),
+    Adocao('Nome: Sem nome definido', 'Raça: Sem raça definida(SRD)', 'assets/images/adotado.jpg'),
   ];
 
   final List<Denuncia> denuncias = [
@@ -37,7 +36,7 @@ class MinhasAdocoesPage extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const AnimaisDisponiveis()),
+                MaterialPageRoute(builder: (context) => const AnimaisDisponiveis()), // Adicione a tela LoginAdministrador
               );
             },
           ),
@@ -100,15 +99,6 @@ class MinhasAdocoesPage extends StatelessWidget {
                             style: TextStyle(fontSize: 16),
                           ),
                         ],
-                      ),
-                    ),
-                    TextButton(
-                      onPressed: () {
-                        _confirmarCancelamento(context, adocao.nome);
-                      },
-                      child: Text(
-                        'Cancelar Adoção',
-                        style: TextStyle(color: Colors.red),
                       ),
                     ),
                   ],

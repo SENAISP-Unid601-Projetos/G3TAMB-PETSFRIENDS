@@ -16,7 +16,6 @@ window.addEventListener("DOMContentLoaded", () => {
                                             <p><strong>Idade:</strong> ${animal.idade}</p>
                                             <p><strong>Raça:</strong> ${animal.raca}</p>
                                             <p><strong>Diagnóstico:</strong> ${animal.diagnostico}</p>
-                                            <p><strong>Sexo:</strong> </p>
                                             <p><strong>Status:</strong> ${animal.status}</p>
                                             <p><strong>Estado de saúde:</strong> ${animal.estado_de_saude}</p>
                                             <div class="button-container">

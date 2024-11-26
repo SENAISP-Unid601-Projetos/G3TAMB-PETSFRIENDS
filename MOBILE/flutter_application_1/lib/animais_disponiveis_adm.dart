@@ -1,33 +1,74 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/cancelar_adocao.dart';
-import 'package:flutter_application_1/perfil_usuario.dart';
+import 'package:flutter_application_1/adm_denuncia.dart';
+import 'package:flutter_application_1/perfil_adm.dart';
+import 'package:flutter_application_1/questionario.dart';
 
 class AnimaisDisponiveisAdm extends StatelessWidget {
   const AnimaisDisponiveisAdm({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Pet\'s Love',
-      theme: ThemeData(
-        primarySwatch: Colors.pink,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Pet\'s Love'),
+        automaticallyImplyLeading: false,
+        actions: [
+           IconButton(
+            icon: Icon(Icons.app_registration_rounded),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => QuestionarioAdocao()),
+              );
+            },
+            tooltip: 'Cadastrar animal',
+          ),
+           IconButton(
+            icon: Icon(Icons.sim_card_alert),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AdmDenuncia()),
+              );
+            },
+            tooltip: 'Denúncias',
+          ),
+          IconButton(
+            icon: Icon(Icons.favorite),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AnimaisDisponiveisAdm()),
+              );
+            },
+            tooltip: 'Minhas Atividades',
+          ),
+          IconButton(
+            icon: Icon(Icons.account_circle),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PerfilAdm()),
+              );
+            },
+            tooltip: 'Perfil do Administrador',
+          ),
+        ],
       ),
-      home: const AnimaisDisponiveisPage(),
-      debugShowCheckedModeBanner: false,
+      body: const AnimaisDisponiveisAdmPage(),
     );
   }
 }
 
 class Animal {
-  final String Nome;
+  final String nome;
   final String raca;
   final String idade;
   final String descricao;
   final String imagemUrl;
 
   Animal({
-    required this.Nome,
+    required this.nome,
     required this.raca,
     required this.idade,
     required this.descricao,
@@ -35,155 +76,154 @@ class Animal {
   });
 }
 
-class AnimaisDisponiveisPage extends StatefulWidget {
-  const AnimaisDisponiveisPage({super.key});
+class AnimaisDisponiveisAdmPage extends StatefulWidget {
+  const AnimaisDisponiveisAdmPage({super.key});
 
   @override
-  _AnimaisDisponiveisPageState createState() => _AnimaisDisponiveisPageState();
+  _AnimaisDisponiveisAdmPageState createState() => _AnimaisDisponiveisAdmPageState();
 }
 
-class _AnimaisDisponiveisPageState extends State<AnimaisDisponiveisPage> {
+class _AnimaisDisponiveisAdmPageState extends State<AnimaisDisponiveisAdmPage> {
   final List<Animal> animais = [
     Animal(
-      Nome: 'Tete',
-      raca: 'Labrador retriever',
-      idade: '2 anos',
-      descricao: 'Brincalhão e carinhoso.',
-      imagemUrl: 'assets/images/labrador.webp',
+      nome: 'Chorão',
+      raca: 'Sem raça definida',
+      idade: '4 meses',
+      descricao: 'Macho, porte pequeno e peludo.',
+      imagemUrl: 'assets/images/cach1.jpg',
+    ),
+     Animal(
+      nome: 'Sem nome definido',
+      raca: 'Sem raça definida(SRD)',
+      idade: '2 meses',
+      descricao: 'Fêmea',
+      imagemUrl: 'assets/images/gato1.jpg',
     ),
     Animal(
-      Nome: 'Gamora',
-      raca: 'SRD',
-      idade: '3 anos',
-      descricao: 'Amorosa e ama crianças. Foi resgatada das ruas.',
-      imagemUrl: 'assets/images/srd.jpg',
+      nome: 'Sem nome definido',
+      raca: 'Sem raça definida(SRD)',
+      idade: '2 meses',
+      descricao: 'Fêmea',
+      imagemUrl: 'assets/images/gato2.jpg',
     ),
-    // Adicione outros animais aqui
+    Animal(
+      nome: 'Katau',
+      raca: 'Sem raça definido(SRD)',
+      idade: '4 meses',
+      descricao: 'Macho de porte grande',
+      imagemUrl: 'assets/images/cach2.jpg',
+    ),
+    Animal(
+      nome: 'Estopinha',
+      raca: 'Sem raça definida(SRD)',
+      idade: '3 anos',
+      descricao: 'Macho de porte pequeno',
+      imagemUrl: 'assets/images/cach3.jpg',
+    ),
+    Animal(
+      nome: 'Aparecidinha',
+      raca: 'Sem raça definida(SRD)',
+      idade: '3 meses',
+      descricao: 'Fêmea de porte grande',
+      imagemUrl: 'assets/images/cach4.jpg',
+    ),
+    Animal(
+      nome: 'Luffy',
+      raca: 'Sem raça definida(SRD)',
+      idade: '2 anos',
+      descricao: 'Macho de porte pequeno',
+      imagemUrl: 'assets/images/cach5.jpg',
+    ),
   ];
 
-  bool denunciaEnviada = false;
-  bool denunciaVisualizada = false;
+
+  List<Animal> get filteredAnimals {
+    return animais;
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          CustomScrollView(
-            slivers: [
-              SliverAppBar(
-                pinned: true,
-                expandedHeight: 260.0,
-                flexibleSpace: FlexibleSpaceBar(
-                  centerTitle: true,
-                  title: Image.asset(
-                    'assets/images/logo.png',
-                    height: 150,
-                  ),
-                  background: Container(color: Colors.white),
-                ),
-                actions: [
-                  IconButton(
-                    icon: Icon(Icons.favorite),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Cancelaradocao()),
-                      );
-                    },
-                    tooltip: 'Minhas Atividades',
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                      child: TextField(
-                        decoration: InputDecoration(
-                          hintText: 'Buscar...',
-                          prefixIcon: Icon(Icons.search),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(30),
-                            borderSide: BorderSide.none,
+      body: CustomScrollView(
+        slivers: [
+          SliverPadding(
+            padding: const EdgeInsets.all(8.0),
+            sliver: SliverGrid(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+                childAspectRatio: 0.65,
+              ),
+              delegate: SliverChildBuilderDelegate(
+                (BuildContext context, int index) {
+                  final animal = filteredAnimals[index];
+                  return GestureDetector(
+                    onTap: () => _showAnimalDetails(context, animal),
+                    child: Container(
+                      height: 450,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 2,
+                            blurRadius: 5,
+                            offset: Offset(0, 3),
                           ),
-                          fillColor: Colors.white,
-                          filled: true,
-                        ),
+                        ],
+                      ),
+                      child: Stack(
+                        children: [
+                          Container(
+                            height: 400,
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage(animal.imagemUrl),
+                                fit: BoxFit.cover,
+                              ),
+                              borderRadius: BorderRadius.vertical(
+                                top: Radius.circular(10),
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            bottom: 10,
+                            left: 10,
+                            child: ElevatedButton.icon(
+                              onPressed: () {
+                                _editarAnimal(context, animal);
+                              },
+                              icon: Icon(Icons.edit),
+                              label: Text(''),
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.blue,
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            bottom: 10,
+                            right: 10,
+                            child: ElevatedButton.icon(
+                              onPressed: () {
+                                _excluirAnimal(context, animal);
+                              },
+                              icon: Icon(Icons.delete),
+                              label: Text(''),
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.red,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                  ),
-                  IconButton(
-                    icon: Icon(Icons.account_circle),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => PerfilUsuarioPage()),
-                      );
-                    },
-                    tooltip: 'Perfil do Usuário',
-                  ),
-                ],
+                  );
+                },
+                childCount: filteredAnimals.length,
               ),
-              SliverPadding(
-                padding: const EdgeInsets.all(8.0),
-                sliver: SliverGrid(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 10,
-                    childAspectRatio: 0.65,
-                  ),
-                  delegate: SliverChildBuilderDelegate(
-                    (BuildContext context, int index) {
-                      final animal = animais[index];
-                      return GestureDetector(
-                        child: Container(
-                          height: 450,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(10),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 2,
-                                blurRadius: 5,
-                                offset: Offset(0, 3),
-                              ),
-                            ],
-                          ),
-                          child: Stack(
-                            children: [
-                              Container(
-                                height: 400,
-                                width: double.infinity,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage(animal.imagemUrl),
-                                    fit: BoxFit.cover,
-                                  ),
-                                  borderRadius: BorderRadius.vertical(
-                                    top: Radius.circular(10),
-                                  ),
-                                ),
-                              ),
-                            ]
-                          ),
-                        ),
-                      );
-                    },
-                    childCount: animais.length,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          Positioned(
-            bottom: 20,
-            right: 20,
-            child: FloatingActionButton(
-              onPressed: () {
-                // Função de denúncia
-              },
-              child: Icon(Icons.warning),
-              backgroundColor: Colors.red,
             ),
           ),
         ],
@@ -191,32 +231,69 @@ class _AnimaisDisponiveisPageState extends State<AnimaisDisponiveisPage> {
     );
   }
 
-  void _showDeleteConfirmationDialog(BuildContext context, Animal animal, int index) {
+  void _editarAnimal(BuildContext context, Animal animal) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Excluir Animal'),
-          content: Text('Tem certeza que deseja excluir ${animal.Nome}?'),
+          title: Text('Editar ${animal.nome}'),
+          content: Text('Aqui será o formulário de edição para o animal.'),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: const Text('Cancelar'),
+              child: Text('Cancelar'),
             ),
             TextButton(
               onPressed: () {
-                setState(() {
-                  animais.removeAt(index);
-                });
+                // Implementar lógica de edição
                 Navigator.of(context).pop();
               },
-              child: const Text('Excluir'),
+              child: Text('Salvar'),
             ),
           ],
         );
       },
     );
   }
+
+  void _excluirAnimal(BuildContext context, Animal animal) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Excluir ${animal.nome}'),
+          content: Text('Tem certeza de que deseja excluir este animal?'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('Cancelar'),
+            ),
+            TextButton(
+              onPressed: () {
+                setState(() {
+                  animais.remove(animal);
+                });
+                Navigator.of(context).pop();
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('${animal.nome} foi excluído com sucesso.'),
+                    duration: Duration(seconds: 3),
+                  ),
+                );
+              },
+              child: Text('Excluir'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+}
+
+class _showAnimalDetails {
+  _showAnimalDetails(BuildContext context, Animal animal);
 }

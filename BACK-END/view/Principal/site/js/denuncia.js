@@ -17,13 +17,25 @@ async function testeFoto() {
     .then( (resp) => {
         return resp.json();
     })
-    .then( (resp) => {
+    .then( async (resp) => {
         console.log(resp);
-        alert("Denuncia feita com sucesso!");
+        await Swal.fire({
+            title: `Sucesso`,
+            text: "Denuncia feita com sucesso!", 
+            icon: "error",
+            timer: 2000,
+            timerProgressBar: true
+          });
         window.location.reload();
     })
-    .catch( (erro) => {
-        alert(erro);
+    .catch( async (erro) => {
+        await Swal.fire({
+            title: "Erro!",
+            text: `${erro}`,
+            icon: "error",
+            timer: 2000,
+            timerProgressBar: true
+          });
     })
 }
 
@@ -43,7 +55,11 @@ window.addEventListener("DOMContentLoaded", () => {
     })
 
     if (camposVazios > 0) {
-        alert("Favor preencher todos os campos obrigatórios!");
+        await Swal.fire({
+            title: `Atenção!`,
+            text: `Favor preencher todos os campos obrigatórios!`,
+            icon: "Warning",
+        });
     }
     else {
         testeFoto();

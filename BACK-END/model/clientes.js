@@ -57,13 +57,55 @@ async function insertClientes(dados) {
                          DATA_DE_NASCIMENTO, 
                          TELEFONE, 
                          SENHA, 
-                         EMAIL)
+                         EMAIL,
+                         FOTO)
                 VALUES  ('${dados.cpf}', 
                          '${dados.nome}', 
                          '${dados.dataNascimento}',
                          '${dados.telefone}',
                          '${dados.senha}',
-                         '${dados.email}');
+                         '${dados.email}',
+                         '${dados.foto}');
+        `);
+        resposta = {sucesso: true, dados: consulta};
+    }
+    catch(erro) {
+        resposta = {sucesso: false, motivoErro: erro}
+    }
+    conexao.end();
+    return resposta;
+}
+
+async function updateClientes(dados) {
+    const conexao = psql.conectaBanco();
+    let resposta;
+    try {
+        consulta = await conexao.query(`
+            UPDATE  USUARIO  
+            SET     CPF = '${dados.cpf}',
+                    NOME = '${dados.nome}', 
+                    DATA_DE_NASCIMENTO = '${dados.dataNascimento}',
+                    TELEFONE = '${dados.telefone}',
+                    EMAIL = '${dados.email}',
+                    FOTO = '${dados.foto}'
+            WHERE CPF = '${dados.cpf}';
+        `);
+        resposta = {sucesso: true, dados: consulta};
+    }
+    catch(erro) {
+        resposta = {sucesso: false, motivoErro: erro}
+    }
+    conexao.end();
+    return resposta;
+}
+
+async function deleteClientes(dados) {
+    const conexao = psql.conectaBanco();
+    let resposta;
+    try {
+        consulta = await conexao.query(`
+            DELETE FROM usuario 
+            WHERE CPF = '${dados.cpf}';
         `);
         resposta = {sucesso: true, dados: consulta};
     }
@@ -77,6 +119,8 @@ async function insertClientes(dados) {
 exports.getClientes = getClientes;
 exports.insertClientes = insertClientes;
 exports.getCliente = getCliente;
+exports.updateClientes = updateClientes;
+exports.deleteClientes = deleteClientes;
 /*
 async function getCliente(filtros) {
     const conexao = psql.conectaBanco();

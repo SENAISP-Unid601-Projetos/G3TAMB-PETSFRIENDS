@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
-import 'package:flutter_application_1/animais_disponiveis.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_application_1/animais_disponiveis_adm.dart';
 
 class QuestionarioAdocao extends StatelessWidget {
   @override
@@ -24,44 +24,37 @@ class AnimalRegistrationPage extends StatefulWidget {
 class _AnimalRegistrationPageState extends State<AnimalRegistrationPage> {
   final _formKey = GlobalKey<FormState>();
   String? _nome;
-  int? _cpf;
-  int? _rg;
-  String? _endereco;
-  String? _dataDeNascimento;
-  PlatformFile? _comprovanteDeResidencia;
-  String? _nomeDoAnimal;
+  String? _raca;
+  int? _idade;
+  String? _diagnostico;
+  String? _status;
+  // ignore: unused_field
+  String? _estado;
+  PlatformFile? _imagem;
 
-  Future<void> _pickFile() async {
+ Future<void> _pickFile() async {
     final result = await FilePicker.platform.pickFiles();
 
     if (result != null) {
       setState(() {
-        _comprovanteDeResidencia = result.files.first;
+        _imagem = result.files.first;
       });
     }
   }
 
-  void _showSnackBar(String message) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(message),
-        duration: Duration(seconds: 2),
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Questionário para adoção'),
+        title: Text('Cadastrar animal'),
         actions: [
           IconButton(
             icon: Icon(Icons.arrow_back),
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const AnimaisDisponiveis()),
+                MaterialPageRoute(builder: (context) => const AnimaisDisponiveisAdm()), // Adicione a tela LoginAdministrador
               );
             },
           ),
@@ -100,13 +93,13 @@ class _AnimalRegistrationPageState extends State<AnimalRegistrationPage> {
                   SizedBox(height: 10),
                   TextFormField(
                     decoration: InputDecoration(
-                      labelText: 'CPF',
+                      labelText: 'Raça',
                       filled: true,
                       fillColor: Colors.white.withOpacity(0.8),
                     ),
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return 'Digite seu CPF';
+                        return 'Digite a raça do seu animal';
                       }
                       return null;
                     },
@@ -114,13 +107,13 @@ class _AnimalRegistrationPageState extends State<AnimalRegistrationPage> {
                   SizedBox(height: 10),
                   TextFormField(
                     decoration: InputDecoration(
-                      labelText: 'RG',
+                      labelText: 'Idade',
                       filled: true,
                       fillColor: Colors.white.withOpacity(0.8),
                     ),
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return 'Digite seu RG';
+                        return 'Digite a idade do seu animal';
                       }
                       return null;
                     },
@@ -128,36 +121,48 @@ class _AnimalRegistrationPageState extends State<AnimalRegistrationPage> {
                   SizedBox(height: 10),
                   TextFormField(
                     decoration: InputDecoration(
-                      labelText: 'Endereço',
+                      labelText: 'Diagnóstico',
                       filled: true,
                       fillColor: Colors.white.withOpacity(0.8),
                     ),
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return 'Digite seu endereço';
+                        return 'Digite o diagnóstico do seu animal';
                       }
                       return null;
                     },
-                    onSaved: (value) => _endereco = value,
+                    onSaved: (value) => _diagnostico = value,
                   ),
                   SizedBox(height: 10),
                   TextFormField(
                     decoration: InputDecoration(
-                      labelText: 'Data de nascimento',
+                      labelText: 'Status',
                       filled: true,
                       fillColor: Colors.white.withOpacity(0.8),
                     ),
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return 'Digite sua data de nascimento';
+                        return 'Digite o status do animal';
                       }
                       return null;
                     },
-                    onSaved: (value) => _dataDeNascimento = value,
+                    onSaved: (value) => _status = value,
                   ),
-                  SizedBox(height: 10),
-                  // Outros campos aqui
-
+                   SizedBox(height: 10),
+                  TextFormField(
+                    decoration: InputDecoration(
+                      labelText: 'Estado',
+                      filled: true,
+                      fillColor: Colors.white.withOpacity(0.8),
+                    ),
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Digite o estado de saude do animal';
+                      }
+                      return null;
+                    },
+                    onSaved: (value) => _estado = value,
+                  ),
                   SizedBox(height: 10),
                   Row(
                     children: [
@@ -165,31 +170,37 @@ class _AnimalRegistrationPageState extends State<AnimalRegistrationPage> {
                         child: ElevatedButton.icon(
                           onPressed: _pickFile,
                           icon: Icon(Icons.attach_file),
-                          label: Text('Selecionar comprovante de residência'),
+                          label: Text('Selecionar a imagem do animal'),
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.grey[300],
                             foregroundColor: Colors.black,
                           ),
                         ),
                       ),
-                      if (_comprovanteDeResidencia != null)
+                      if (_imagem != null)
                         Padding(
                           padding: const EdgeInsets.only(left: 8.0),
                           child: Text(
-                            _comprovanteDeResidencia!.name,
+                            _imagem!.name,
                             style: TextStyle(color: Colors.green),
                           ),
                         ),
                     ],
                   ),
+                 
                   SizedBox(height: 20),
                   Center(
                     child: ElevatedButton(
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
                           _formKey.currentState!.save();
-                          print('Nome: $_nome, CPF: $_cpf, RG: $_rg, Endereço: $_endereco, Data de Nascimento: $_dataDeNascimento, Comprovante de Residência: $_comprovanteDeResidencia, Nome do Animal: $_nomeDoAnimal.');
-                          _showSnackBar('Questionário enviado');
+                          print('Nome: $_nome, Raça: $_raca, Idade: $_idade, Diagnóstico: $_diagnostico, Status: $_status, Imagem: $_imagem, Nome do Animal: $_estado.');
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text('Questionário enviado'),
+                              duration: Duration(seconds: 2),
+                            ),
+                          );
                         }
                       },
                       style: ElevatedButton.styleFrom(

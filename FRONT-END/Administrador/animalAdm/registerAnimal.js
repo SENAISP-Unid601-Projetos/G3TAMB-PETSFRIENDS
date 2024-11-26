@@ -4,7 +4,7 @@ async function cadastraAnimal() {
     const idade = document.querySelector("#idade");
     const raca = document.querySelector("#raca");
     const diagnostico = document.querySelector("#diagnostico");
-    const sexo = document.querySelector("#sexo");
+    
     const status = document.querySelector("#status");
     const estado_saude = document.querySelector("#estado_saude");
     const foto = document.querySelector("#foto").files[0];
@@ -13,7 +13,7 @@ async function cadastraAnimal() {
     dadosForm.append("idade", idade.value);
     dadosForm.append("raca", raca.value);
     dadosForm.append("diagnostico", diagnostico.value);
-    dadosForm.append("sexo", sexo.value);
+    
     dadosForm.append("status", status.value);
     dadosForm.append("estado_saude", estado_saude.value);
     dadosForm.append("email", localStorage.getItem("emailAdm"));

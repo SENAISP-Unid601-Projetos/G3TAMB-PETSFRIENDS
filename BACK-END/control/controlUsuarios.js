@@ -16,6 +16,18 @@ async function cadastraCliente(req, res) {
     res.json(resposta);
 }
 
+async function atualizaCliente(req, res) {
+    const resposta = await clientes.updateClientes(req.body);
+    res.json(resposta);
+}
+
+async function excluiCliente(req, res) {
+    const resposta = await clientes.deleteClientes(req.body);
+    res.json(resposta);
+}
+
 exports.consultaTodosClientes = consultaTodosClientes;
 exports.consultaCliente = consultaCliente;
 exports.cadastraCliente = cadastraCliente;
+exports.atualizaCliente = atualizaCliente;
+exports.excluiCliente = excluiCliente;

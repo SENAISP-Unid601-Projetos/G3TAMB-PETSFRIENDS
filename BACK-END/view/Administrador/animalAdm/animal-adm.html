@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Animal</title>
     <link rel="stylesheet" href="animal-adm.css">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Open+Sans:wght@300;400;500;600&display=swap">
 </head>
 <body>
@@ -33,13 +33,6 @@
                 <input type="text" id="diagnostico" name="diagnostico" required>
             </div>
             <div class="input-box">
-                <label for="sexo">Sexo:</label>
-                <select id="sexo" name="sexo" required>
-                    <option value="macho">Macho</option>
-                    <option value="femea">Fêmea</option>
-                </select>
-            </div>
-            <div class="input-box">
                 <label for="status">Status:</label>
                 <select id="status" name="status" required>
                     <option value="disponivel">Disponível</option>
@@ -61,5 +54,6 @@
     </div>
 </div>
 <script src="registerAnimal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

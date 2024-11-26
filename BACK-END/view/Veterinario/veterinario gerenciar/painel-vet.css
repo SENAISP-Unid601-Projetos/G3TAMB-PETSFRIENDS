@@ -11,7 +11,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('https://example.com/background-pet.jpg'); /* Link para uma imagem de fundo amigável */
+    background-image: url('images/claro2.jpeg');
     background-size: cover;
     background-position: center;
     color: #444;
@@ -30,7 +30,7 @@ body {
 }
 
 h1 {
-    color: #ff6f61;
+    color: #bb9a6d;;
     font-size: 26px;
     margin-bottom: 20px;
     font-weight: bold;
@@ -42,7 +42,7 @@ h1 {
     width: 100%;
     padding: 15px;
     margin: 15px 0;
-    background-color: #ff6f61;
+    background-color: #bb9a6d;;
     color: #fff;
     text-decoration: none;
     font-size: 18px;
@@ -53,8 +53,7 @@ h1 {
 }
 
 .btn:hover {
-    background-color: #ff8a75;
-    transform: translateY(-2px);
+    opacity: 0.9;
 }
 
 /* Ícones e Estilo Amigável */

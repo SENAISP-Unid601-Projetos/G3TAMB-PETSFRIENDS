@@ -1,3 +1,5 @@
+let nomeFotoPerfil = "";
+
 async function cadastraCliente() {
     const nome = document.querySelector("#fullName");
     const email = document.querySelector("#email");
@@ -5,6 +7,8 @@ async function cadastraCliente() {
     const dataNasc = document.querySelector("#dateOfBirth");
     const telefone = document.querySelector("#number");
     const senha = document.querySelector("#password");
+    const foto = document.querySelector("#profilePhoto");
+    alert(nomeFotoPerfil);
     fetch("/cadastra_usuario", {
         method:"POST",
         headers: {
@@ -17,7 +21,8 @@ async function cadastraCliente() {
             "dataNascimento":"${dataNasc.value}",
             "telefone":"${telefone.value}",
             "email":"${email.value}",
-            "senha":"${senha.value}"
+            "senha":"${senha.value}",
+            "foto": ${foto.files.length > 0 ? `"${nomeFotoPerfil}"`:null}
         }
         ` 
     })
@@ -30,15 +35,44 @@ async function cadastraCliente() {
             throw "Usuário não cadastrado.\nMotivo: " + JSON.stringify(dados.motivoErro);
         }
         alert("Cadastro feito com sucesso!");
-        open("login", "_self");
+        open("/login", "_self");
     })
     .catch( (erro) => {
         alert(erro);
     });
 }
 
+function uploadImagem() {
+    const botaoUpload = document.querySelector("#profilePhoto");
+    const dados = new FormData();
+    dados.append("imagem", botaoUpload.files[0]);
+
+    fetch("uploadImagemPerfil", {
+        method:"POST",
+        body: dados
+    })
+    .then( (resp) => {
+        return resp.json();
+    })
+    .then( (dados) => {
+        const fotoPerfil = document.querySelector(".profile-box img");
+        nomeFotoPerfil = `/assets/imgs_perfil/${dados.filename}`;
+        fotoPerfil.setAttribute("src", nomeFotoPerfil);
+        console.log(dados);
+    })
+    .catch( (erro) => {
+        nomeFotoPerfil = "";
+        console.error(erro);
+    })
+}
+
 window.addEventListener("DOMContentLoaded", () => {
     const botaoEnvia = document.querySelector("body > div > div.form > form > div.continue-button > button");
+    const botaoUploadPerfil = document.querySelector("#profilePhoto");
+
+    botaoUploadPerfil.addEventListener("change", () => {
+        uploadImagem();
+    })
     
     botaoEnvia.addEventListener("click", () => {
         const campos = document.querySelectorAll("input[required]");

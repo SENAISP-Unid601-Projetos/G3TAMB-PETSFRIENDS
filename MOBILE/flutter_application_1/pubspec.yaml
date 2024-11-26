@@ -24,15 +24,19 @@ flutter:
   assets:
     - assets/images/logo.png
     - assets/images/fundo.png
-    - assets/images/boder.jpg
-    - assets/images/labrador.webp
-    - assets/images/persa.jpg
-    - assets/images/Poodle.jpg
-    - assets/images/siames.jpg
-    - assets/images/siberiano.jpg
-    - assets/images/srd.jpg
-    - assets/images/pastor.jpg
+    - assets/images/gato1.jpg
+    - assets/images/gato2.jpg
+    - assets/images/cach1.jpg
+    - assets/images/cach2.jpg
+    - assets/images/cach3.jpg
+    - assets/images/cach4.jpg
+    - assets/images/cach5.jpg
+    - assets/images/adotado.jpg
+    - assets/images/fundo.png
     - assets/images/img.jpg
     - assets/images/img1.jpg
     - assets/images/perfil.jpg
+    - assets/images/veterinario1.jpg
+    - assets/images/veterinario2.jpg
+    - assets/images/jojo.webp
 

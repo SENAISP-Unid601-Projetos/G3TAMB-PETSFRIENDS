@@ -13972,6 +13972,20 @@ html[class*="ie"] .dtp-hand, html[class*="ie"] .dtp-hour-hand {
 	cursor: pointer;
 	transition: background-color 0.3s;
   }
+
+  .rd-navbar-nav .rd-nav-item {
+	width: 10px;
+	height: 10px;
+	overflow: hidden;
+	position: relative;
+}
+
+.rd-navbar-nav .rd-nav-item #vinil{
+	width: 100%;
+	height: auto;
+	position: absolute;
+	object-fit: cover;
+}
   
  
   

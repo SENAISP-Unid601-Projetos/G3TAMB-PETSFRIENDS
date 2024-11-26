@@ -1,0 +1,124 @@
+<!-- Page Title--><!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <title>Veterinários Disponíveis - Pet's Friends</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <!-- Stylesheets-->
+     
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+  </head>
+  <body>
+    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <div class="preloader">
+      <div class="preloader-body">
+        <div class="cssload-container">
+          <div class="cssload-speeding-wheel"></div>
+        </div>
+        <p>Carregando...</p>
+      </div>
+    </div>
+    <div class="page"><a class="section section-banner d-none d-xl-block" href="https://www.templatemonster.com/intense-multipurpose-html-template.html" target="_blank" style="background-image: url(images/banner/background-04-1920x60.jpg); background-image: -webkit-image-set( url(images/banner/background-04-1920x60.jpg) 1x, url(images/banner/background-04-3840x120.jpg) 2x )"></a>
+      <!-- Page Header-->
+      <header class="section page-header">
+        <!-- RD Navbar-->
+        <div class="rd-navbar-wrap">
+          <nav class="rd-navbar rd-navbar-classic rd-navbar-classic-minimal" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+            <div class="rd-navbar-main-outer">
+              <div class="rd-navbar-main">
+                <!-- RD Navbar Panel-->
+                <div class="rd-navbar-panel">
+                  <!-- RD Navbar Toggle-->
+                  <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                  <!-- RD Navbar Brand-->
+                  <div class="rd-navbar-brand">
+                    <!--Brand--><a class="brand" href="index2.html"><img class="brand-logo-dark" src="images/logo-default-392x116.png" alt="" width="196" height="58"/><img class="brand-logo-light" src="images/logo-default-392x116.png" alt="" width="196" height="58"/></a>
+                  </div>
+                </div>
+                <div class="rd-navbar-main-element">
+                  <div class="rd-navbar-nav-wrap">
+                    <!-- RD Navbar Nav-->
+                    <ul class="rd-navbar-nav">
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="/">Home</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="/AdocaoAnimais">Animais Disponíveis</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="/sobre_nos">Sobre nós</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="/ajuda">Ajuda</a>
+                      </li>
+                      <li class="rd-nav-item "><a class="rd-nav-link" href="/denunciar">Denunciar</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="/AdocaoAnimais">Adoção</a>
+                      </li>
+                      <!-- Botão Entrar -->
+                      <li class="rd-nav-item"></li>
+                        <img id="vinil" src="images/icone.png" alt="Vinil" onclick="toggleMenu()">
+                        <a id="link-login" class="rd-nav-link" href="login">Login</a>
+                        <div id="profileMenu" class="profile-menu">
+                          <a href="/perfil"><i class="fas fa-user"></i> Perfil</a>
+                          <a href="javascript:void(0)" onclick="logoutConta()"><i class="fas fa-door-open"></i> Sair</a>
+                        </div>
+                      </li>
+
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      
+      <section class="breadcrumbs-custom">
+        <div class="container">
+          <ul class="breadcrumbs-custom-path">
+            <li><a href="/">Home</a></li>
+            <li class="active">Veterinários Disponíveis</li>
+          </ul>
+        </div>
+      </section>
+
+      
+      <!-- Seção da tabela -->
+      <section class="section bg-default">
+        <div class="container">
+            <h3 class="text-center">Lista de Veterinários</h3>
+            
+            <!-- Tabela de Veterinários -->
+            <table class="table table-bordered" id="tabelaVeterinario">
+                <thead>
+                    <tr>
+                        <th>CRMV</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                
+            </table>
+        </div>
+    </section>
+      
+      
+      <section class="bg-gray-100 section-xs text-center">
+        <div class="container">
+          <p class="rights"><span>&copy;&nbsp; </span><span class="copyright-year"></span><span>&nbsp;</span><span>All Rights Reserved</span><span>.&nbsp;</span>Design&nbsp;by&nbsp;<a class="link-underline" href="https://www.templatemonster.com/">Pet´s friends</a></p>
+        </div>
+      </section>
+    </div>
+    <!-- Global Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
+    <!-- Javascript-->
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/lista.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>

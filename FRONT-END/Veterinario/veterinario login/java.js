@@ -1,5 +1,5 @@
 async function loginVeterinario() {
-    localStorage.removeItem("dadosUsuario");
+    localStorage.clear();
     const crmv = document.querySelector("#crmv");
     const senha = document.querySelector("#password");
     await fetch("/pega_vet", {
@@ -23,12 +23,16 @@ async function loginVeterinario() {
         }
         const tratado = dados.conteudo[0];
         console.log(dados);
-        localStorage.setItem("dadosUsuario", JSON.stringify(tratado));
-        alert("Entrou! :)");
-        open("/", "_self");
+        localStorage.setItem("dadosVeterinario", JSON.stringify(tratado));
+        open("/consultas_veterinario", "_self");
     })
     .catch( (erro) => {
-        alert(erro);
+        Swal.fire({
+            icon: "error",
+            title: "Erro",
+            text: `${erro}`,
+            timer: 2000
+          });
     });
 }
 

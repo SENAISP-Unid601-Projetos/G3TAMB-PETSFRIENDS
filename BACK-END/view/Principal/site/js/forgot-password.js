@@ -1,7 +1,6 @@
 async function enviaEmailSenha() {
     const campoEmail = document.querySelector("#email");
     const email = campoEmail.value;
-    alert(email);
     const obj = {
         method: "POST",
         headers: {
@@ -15,13 +14,24 @@ async function enviaEmailSenha() {
     .then( (resp) => {
         return resp.json();
     })
-    .then( (dados) => {
-        alert(dados);
-        alert("Verifique sua caixa de entrada. Se você já estiver cadastrado, você receberá um email com a recuperação de senha!");
+    .then( async (dados) => {
+        await Swal.fire({
+            title: "Informação",
+            text: `Verifique sua caixa de entrada. Se você já estiver cadastrado, você receberá um email com a recuperação de senha!`,
+            icon: "info",
+            timer: 2000,
+            timerProgressBar: true
+        });
         open("/", "_self");
     })
-    .catch( (erro) => {
-        alert("Erro ao enviar email\nMotivo: " + erro);
+    .catch( async (erro) => {
+        await Swal.fire({
+            title: "Erro ao enviar email!",
+            text: `${erro}`,
+            icon: "error",
+            timer: 2000,
+            timerProgressBar: true
+          });
     })
 }
 
@@ -38,7 +48,13 @@ window.addEventListener("DOMContentLoaded", () => {
         })
 
         if (camposVazios > 0) {
-            alert("Favor preencha todos os campos!");
+            await Swal.fire({
+                title: "Erro",
+                text: "Favor preencha todos os campos!",
+                icon: "error",
+                timer: 2000,
+                timerProgressBar: true
+              });
         }
         else {
             enviaEmailSenha();

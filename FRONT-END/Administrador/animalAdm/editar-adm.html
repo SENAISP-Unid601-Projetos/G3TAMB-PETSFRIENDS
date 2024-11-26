@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Animal</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="editar-adm.css">
 </head>
@@ -16,6 +17,7 @@
             <div class="form-group">
                 <label for="nome">Nome:</label>
                 <input type="text" class="form-control" id="nome" name="nome">
+                <input type="text" class="form-control" id="codigo" name="codigo" hidden>
             </div>
             <div class="form-group">
                 <label for="raca">Raça:</label>
@@ -30,31 +32,20 @@
                 <input type="text" class="form-control" id="diagnostico" name="diagnostico">
             </div>
             <div class="form-group">
-                <label for="sexo">Sexo:</label>
-                <select class="form-control" id="sexo" name="sexo">
-                    <option value="macho">Macho</option>
-                    <option value="femea">Fêmea</option>
-                </select>
-            </div>
-            <div class="form-group">
                 <label for="status">Status:</label>
                 <select class="form-control" id="status" name="status">
-                    <option value="disponivel">Disponível para Adoção</option>
+                    <option value="disponivel">Disponível</option>
                     <option value="adotado">Adotado</option>
-                    <option value="reservado">Reservado</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="estado">Estado de Saúde:</label>
                 <input type="text" class="form-control" id="estado" name="estado">
             </div>
-            <div class="form-group">
-                <label for="estado">Estado de Saúde:</label>
-                <input type="text" class="form-control" id="estado" name="estado">
-            </div>
-            <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+            <button type="submit" class="btn btn-primary" onclick="salvaAlteracoes()">Salvar Alterações</button>
         </form>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="listaEditaAnimal.js"></script>
 </body>
 </html>

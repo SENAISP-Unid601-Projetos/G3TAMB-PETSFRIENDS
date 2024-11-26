@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <!-- Stylesheets-->
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:300i,400,400i,700%7CMontserrat:400,500,600,700%7CPlayfair+Display:400,700,700i%7COswald:400,700,700i">
+     
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
@@ -97,27 +97,32 @@
                   <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                   <!-- RD Navbar Brand-->
                   <div class="rd-navbar-brand">
-                    <!--Brand--><a class="brand" href="index.html"><img class="brand-logo-dark" src="images/logo-default-392x116.png" alt="" width="196" height="58"/><img class="brand-logo-light" src="images/logo-default-392x116.png" alt="" width="196" height="58"/></a>
+                    <!--Brand--><a class="brand" href="/"><img class="brand-logo-dark" src="images/logo-default-392x116.png" alt="" width="196" height="58"/><img class="brand-logo-light" src="images/logo-default-392x116.png" alt="" width="196" height="58"/></a>
                   </div>
                 </div>
                 <div class="rd-navbar-main-element">
                   <div class="rd-navbar-nav-wrap">
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Home</a>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="/">Home</a>
                       </li>
-                      <li class="rd-nav-item active"><a class="rd-nav-link" href="adocao.html">Animais Disponíveis</a>
+                      <li class="rd-nav-item active"><a class="rd-nav-link" href="/AdocaoAnimais">Animais Disponíveis</a>
                       </li>
-                      <li class="rd-nav-item "><a class="rd-nav-link" href="about.html">Sobre nós</a>
+                      <li class="rd-nav-item "><a class="rd-nav-link" href="/sobre_nos">Sobre nós</a>
                       </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="typography.html">Ajuda</a>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="/ajuda">Ajuda</a>
                       </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Denunciar</a>
-                        <li class="rd-nav-item"></li>
-                      <img id="vinil" src="images/icone.png" alt="Vinil ">
-                        <a id="link-login" class="rd-nav-link" href="login.html">Login</a>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="/denunciar">Denunciar</a>
                       </li>
-                      
+                      <!-- Botão Entrar -->
+                      <li class="rd-nav-item"></li>
+                        <img id="vinil" src="images/icone.png" alt="Vinil" onclick="toggleMenu()">
+                        <a id="link-login" class="rd-nav-link" href="login">Login</a>
+                        <div id="profileMenu" class="profile-menu">
+                          <a href="/perfil"><i class="fas fa-user"></i> Perfil</a>
+                          <a href="javascript:void(0)" onclick="logoutConta()"><i class="fas fa-door-open"></i> Sair</a>
+                        </div>
+                      </li>
                       
                     </ul>
                   </div>
@@ -131,7 +136,7 @@
       <section class="breadcrumbs-custom">
         <div class="container">
           <ul class="breadcrumbs-custom-path">
-            <li><a href="index.html">Casa</a></li>
+            <li><a href="/">Home</a></li>
             <li class="active">Animais Disponíveis</li>
           </ul>
         </div>
@@ -158,5 +163,6 @@
     <script src="js/script.js"></script>
     <script src="./js/listaAnimais.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>

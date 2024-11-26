@@ -62,6 +62,16 @@ window.addEventListener("DOMContentLoaded", () => {
     })
 })
 
+// Função para mostrar ou esconder o balão com as opções
+function toggleOptions() {
+    var options = document.getElementById("options");
+    if (options.style.display === "none" || options.style.display === "") {
+      options.style.display = "block"; // Exibe o balão com as opções
+    } else {
+      options.style.display = "none"; // Oculta o balão
+    }
+  }
+
 
 /*
 document.getElementById("registerForm").addEventListener("submit", function (event) {
@@ -217,3 +227,6 @@ function openCamera() {
         });
 }
 */
+
+
+  

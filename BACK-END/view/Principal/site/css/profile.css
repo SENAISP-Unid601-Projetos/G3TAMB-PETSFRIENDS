@@ -1,9 +1,11 @@
-/* profile.css */
-h2{
+h2 {
     color: #000;
-  }
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
 .container {
-    max-width: 600px;
+    max-width: 800px;
     margin: auto;
     background: white;
     padding: 30px;
@@ -28,31 +30,43 @@ h2{
     margin-bottom: 20px;
     border-bottom: 2px solid #d89f3b;
     padding-bottom: 20px;
+    gap: 20px; /* Add spacing between photo and text */
 }
 
 .profile-photo {
     flex: 0 0 120px;
     margin-right: 20px;
+    cursor: pointer;
 }
 
 .profile-photo img {
-    width: 100%;
+    margin-left: 300px;
+    width: 20%;
     border-radius: 50%;
     border: 4px solid #d89f3b;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 .profile-photo-section {
-    text-align: center;
+    display: flex;
+    justify-content: center; /* Alinha horizontalmente no centro */
+    align-items: center; /* Alinha verticalmente no centro */
     margin-bottom: 20px;
-    }
+    position: relative;
+}
 
 .profile-photo-section img {
-    width: 120px;
-    height: 120px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     border: 4px solid #d89f3b;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
+    object-fit: cover;
+    position: absolute; /* Coloca o ícone no centro da foto de perfil */
+    bottom: 10px; /* Ajuste conforme necessário para a posição */
+}
+
+
 .info {
     flex: 1;
 }
@@ -76,26 +90,63 @@ button {
     cursor: pointer;
     font-size: 1em;
     transition: background-color 0.3s, transform 0.2s;
+    margin-top: 20px;
+    width: 100%;
 }
+
+button:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
 form {
     display: flex;
     flex-direction: column;
-    }
+    gap: 15px; /* Space out form fields and buttons */
+}
 
-    label {
-    margin-top: 15px;
+label {
     color: #333;
     font-weight: bold;
-    }
+}
 
-    input {
+input {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 8px;
     font-size: 1em;
-    }
+    flex: 1; /* Garante que o input ocupe todo o espaço disponível */
+}
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaço entre o input e o botão */
+}
+.input-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
 
-    .modal {
+.edit-btn {
+    padding: 8px 15px;
+    background-color: #d89f3b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-left: 10px;
+}
+
+.edit-btn:hover {
+    background-color: #c68e31;
+    transform: scale(1.05);
+}
+
+/* Modal styles */
+.modal {
     display: none;
     position: fixed;
     z-index: 1;
@@ -104,9 +155,9 @@ form {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    }
+}
 
-    .modal-content {
+.modal-content {
     background-color: #fff;
     margin: 15% auto;
     padding: 20px;
@@ -116,24 +167,21 @@ form {
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
-    }
+}
 
-    .close {
+.close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
-    }
-
-    .close:hover {
-    color: #000;
-    }
-button:hover {
-    background-color: #c68e31;
-    transform: scale(1.05);
 }
 
+.close:hover {
+    color: #000;
+}
+
+/* Media Queries */
 @media (max-width: 600px) {
     .profile-info {
         flex-direction: column;
@@ -143,4 +191,46 @@ button:hover {
     .profile-photo {
         margin: 0 0 15px 0;
     }
+
+    .container {
+        padding: 20px;
+    }
+}
+.button-container {
+    display: flex;
+    gap: 10px; /* Espaço entre os botões */
+    justify-content: center; /* Alinha os botões no centro */
+}
+
+button {
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.2s;
+    width: auto; /* Permite que os botões ajustem seu tamanho conforme o conteúdo */
+}
+
+.logout-btn {
+    background-color:#ffcc00; /* Amarelo */
+    color: white;
+}
+
+.delete-btn {
+    background-color: #dc3545; /* Vermelho */
+    color: white;
+}
+
+.save-btn {
+    background-color: #28a745; /* Verde */
+    color: white;
+}
+
+button:hover {
+    transform: scale(1.05);
+    
+}
+
+button:focus {
+    outline: none;
 }

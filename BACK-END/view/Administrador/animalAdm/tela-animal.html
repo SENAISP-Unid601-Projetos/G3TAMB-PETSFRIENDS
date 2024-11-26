@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <!-- Stylesheets-->
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:300i,400,400i,700%7CMontserrat:400,500,600,700%7CPlayfair+Display:400,700,700i%7COswald:400,700,700i">
+     
     <link rel="stylesheet" href="../../Principal/site/css/bootstrap.css">
     <link rel="stylesheet" href="../../Principal/site/css/fonts.css">
     <link rel="stylesheet" href="../../Principal/site/css/style.css">
@@ -31,10 +31,21 @@ p {
 
 .btn-adopt {
     margin-bottom: 5%;
-    background-color: #28a745; /* Cor do botão */
+    background-color: #bb9a6d; /* Cor do botão */
     color: white; /* Cor do texto do botão */
     border: none; /* Remove a borda padrão */
-    border-radius: 5px; /* Bordas arredondadas */
+    padding: 10px 15px; /* Espaçamento interno do botão */
+    cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+    font-size: 1em; /* Tamanho da fonte do botão */
+    transition: background-color 0.3s; /* Transição suave para hover */
+}
+
+.btn-adopt-exclui {
+    margin-bottom: 5%;
+    background-color: #bb9a6d; /* Cor do botão */
+    color: white; /* Cor do texto do botão */
+    border: none; /* Remove a borda padrão */
+    border-radius: 5px;
     padding: 10px 15px; /* Espaçamento interno do botão */
     cursor: pointer; /* Muda o cursor ao passar sobre o botão */
     font-size: 1em; /* Tamanho da fonte do botão */
@@ -42,8 +53,14 @@ p {
 }
 
 .btn-adopt:hover {
-    background-color: #218838; /* Cor mais escura ao passar o mouse */
+    background-color: #a06335; /* Cor mais escura ao passar o mouse */
 }
+
+.btn-adopt-exclui:hover {
+    background-color: #d05959; /* Cor mais escura ao passar o mouse */
+}
+
+
 
 .team-minimal {
     display: flex;
@@ -104,15 +121,12 @@ p {
                   <div class="rd-navbar-nav-wrap">
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Home</a>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="gerenciarveterinario.html">Gerenciar Veterinários</a>
                       </li>
-                      <li class="rd-nav-item "><a class="rd-nav-link" href="about.html">Sobre nós</a>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="gerenciardenuncias.html">Gerenciar Denúncias</a>
                       </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="typography.html">Ajuda</a>
+                      <li class="rd-nav-item active"><a class="rd-nav-link" href="javscript:void(0)" onclick="logoutConta()">Sair</a>
                       </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Denunciar</a>
-                      </li>
-                      
                     </ul>
                   </div>
                 </div>
@@ -178,5 +192,7 @@ p {
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
     <script src="listaAnimais.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="main.js"></script>
   </body>
 </html>

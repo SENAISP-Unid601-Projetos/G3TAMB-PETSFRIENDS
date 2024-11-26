@@ -82,3 +82,4 @@ async function insertVeterinario(dados) {
 
 exports.insertVeterinario = insertVeterinario;
 exports.getVeterinario = getVeterinario;
+exports.getVeterinarios = getVeterinarios;

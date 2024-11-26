@@ -32,11 +32,13 @@ async function loginCliente() {
                     "telefone": "${dados.conteudo[0].telefone}"
                 }
             `)
-        alert("Entrou! :)");
         open("/", "_self");
     })
-    .catch( (erro) => {
-        alert(erro);
+    .catch( async (erro) => {
+        await Swal.fire({
+            title: `${erro}`,
+            icon: "error"
+          });
     });
 }
 

@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <!-- Stylesheets-->
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:300i,400,400i,700%7CMontserrat:400,500,600,700%7CPlayfair+Display:400,700,700i%7COswald:400,700,700i">
+     
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="./css/fonts.css">
     <link rel="stylesheet" href="./css/style.css">
@@ -38,18 +38,31 @@
                   <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                   <!-- RD Navbar Brand-->
                   <div class="rd-navbar-brand">
-                    <!--Brand--><a class="brand" href="index.html"><img class="brand-logo-dark" src="images/logo-default-392x116.png" alt="" width="196" height="58"/><img class="brand-logo-light" src="images/logo-default-392x116.png" alt="" width="196" height="58"/></a>
+                    <!--Brand--><a class="brand" href="/"><img class="brand-logo-dark" src="images/logo-default-392x116.png" alt="" width="196" height="58"/><img class="brand-logo-light" src="images/logo-default-392x116.png" alt="" width="196" height="58"/></a>
                   </div>
                 </div>
                 <div class="rd-navbar-main-element">
                   <div class="rd-navbar-nav-wrap">
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
-                      
+                      <li class="rd-nav-item active"><a class="rd-nav-link" href="/">Home</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="/AdocaoAnimais">Animais Disponíveis</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="/sobre_nos">Sobre nós</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="/ajuda">Ajuda</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="/denunciar">Denunciar</a>
+                      </li>
                       <!-- Botão Entrar -->
                       <li class="rd-nav-item"></li>
-                      <img id="vinil" src="images/icone.png" alt="Vinil ">
-                        <a id="link-login" class="rd-nav-link" href="login.html">Login</a>
+                        <img id="vinil" src="images/icone.png" alt="Vinil" onclick="toggleMenu()">
+                        <a id="link-login" class="rd-nav-link" href="login">Login</a>
+                        <div id="profileMenu" class="profile-menu">
+                          <a href="/perfil"><i class="fas fa-user"></i> Perfil</a>
+                          <a href="javascript:void(0)" onclick="logoutConta()"><i class="fas fa-door-open"></i> Sair</a>
+                        </div>
                       </li>
 
                     </ul>
@@ -164,14 +177,14 @@
           <h2>Nossos Serviços</h2>
           <div class="divider-lg"></div>
           
-          <div class="row icon-modern-list no-gutters">
+          <div class="row icon-modern-list no-gutters" style="margin-left: 15%;">
             
             <div class="col-sm-6 col-lg-4">
               <article class="box-icon-modern modern-variant-2">
                 <div class="icon-modern">
-                  <img id="vinil" src="images/2.png" alt="Vinil ">
+                  <img  src="images/2.png" alt="Vinil ">
                 </div>
-                <h4 class="box-icon-modern-title"><a href="adocao.html">Perfil Detalhado dos Cães</a></h4>
+                <h4 class="box-icon-modern-title"><a href="/AdocaoAnimais">Perfil Detalhado dos Cães</a></h4>
                 <div class="divider"></div>
                 <p>Informações sobre a personalidade, histórico de saúde, e necessidades especiais de cada cachorro disponível para adoção.</p>
               </article>
@@ -179,9 +192,9 @@
             <div class="col-sm-6 col-lg-4">
               <article class="box-icon-modern modern-variant-2">
                 <div class="icon-modern">
-                  <img id="vinil" src="images/3.png" alt="Vinil ">
+                  <img  src="images/3.png" alt="Vinil ">
                 </div>
-                <h4 class="box-icon-modern-title"><a href="consulta.html">Agendar Consultas</a></h4>
+                <h4 class="box-icon-modern-title"><a href="/agendar_consulta">Agendar Consultas</a></h4>
                 <div class="divider"></div>
                 <p>Oferecemos agendamento fácil e rápido para consultas veterinárias, garantindo o melhor cuidado para seu pet.</p>
               </article>
@@ -190,9 +203,9 @@
             <div class="col-sm-6 col-lg-4">
               <article class="box-icon-modern modern-variant-2">
                 <div class="icon-modern">
-                  <img id="vinil" src="images/5.png" alt="Vinil ">
+                  <img src="images/5.png" alt="Vinil ">
                 </div>
-                <h4 class="box-icon-modern-title"><a href="#">Lista de Veterinários</a></h4>
+                <h4 class="box-icon-modern-title"><a href="/lista_veterinarios">Lista de Veterinários</a></h4>
                 <div class="divider"></div>
                 <p>Encontre uma lista de veterinários próximos para cuidados especializados, com informações de contato e áreas de especialização.</p>
               </article>
@@ -200,9 +213,9 @@
             <div class="col-sm-6 col-lg-4">
               <article class="box-icon-modern modern-variant-2">
                 <div class="icon-modern">
-                  <img id="vinil" src="images/6.png" alt="Vinil ">
+                  <img  src="images/6.png" alt="Vinil ">
                 </div>
-                <h4 class="box-icon-modern-title"><a href="contacts.html">Realizar Denúncias</a></h4>
+                <h4 class="box-icon-modern-title"><a href="/denunciar">Realizar Denúncias</a></h4>
                 <div class="divider"></div>
                 <p>Permite que visitantes denunciem casos de abandono ou maus-tratos, com a opção de enviar descrições detalhadas e evidências (fotos, vídeos).</p>
               </article>
@@ -266,15 +279,16 @@
         <div class="container">
           <div class="row row-30 align-items-lg-center justify-content-lg-between">
             <div class="col-lg-2">
-              <div class="footer-brand"><a href="index.html"><img class="brand-logo-dark" src="images/logo-default-392x116.png" alt="" width="100" height="10"/></a></div>
+              <div class="footer-brand"><a href="/"><img class="brand-logo-dark" src="images/logo-default-392x116.png" alt="" width="100" height="10"/></a></div>
             </div>
             <div class="col-lg-10">
               <div class="footer-nav">
                 <ul class="rd-navbar-nav">
-                  <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Casa</a></li>
-                  <li class="rd-nav-item"><a class="rd-nav-link" href="about.html">Sobre nós</a></li>
-                  <li class="rd-nav-item"><a class="rd-nav-link" href="typography.html">Ajuda</a></li>
-                  <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Denunciar</a></li>
+                  <li class="rd-nav-item active"><a class="rd-nav-link" href="/">Home</a></li>
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="/sobre_nos">Sobre nós</a></li>
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="/ajuda">Ajuda</a></li>
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="/denunciar">Denunciar</a></li>
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="/LoginAdm">Login Adm</a></li>
                 </ul>
               </div>
             </div>
@@ -283,9 +297,10 @@
       </footer>
       <section class="bg-gray-100 section-xs text-center">
         <div class="container">
-          <p class="rights"><span>&copy;&nbsp; </span><span class="copyright-year"></span><span>&nbsp;</span><span>All Rights Reserved</span><span>.&nbsp;</span>Design&nbsp;by&nbsp;<a class="link-underline" href="https://www.templatemonster.com/">TemplateMonster</a></p>
+          <p class="rights"><span>&copy;&nbsp; </span><span class="copyright-year"></span><span>&nbsp;</span><span>All Rights Reserved</span><span>.&nbsp;</span>Design&nbsp;by&nbsp;<a class="link-underline" href="https://www.templatemonster.com/">Pet´s friends</a></p>
         </div>
       </section>
+    </div>
     </div>
     <!-- Global Mailform Output-->
     <div class="snackbars" id="form-output-global"></div>
@@ -293,6 +308,7 @@
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- coded by houdini-->
      
   </body>

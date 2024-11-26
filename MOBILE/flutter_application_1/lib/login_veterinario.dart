@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/animais_disponiveis_vet.dart';
 import 'package:flutter_application_1/cadastro_veterinario.dart';
 import 'package:flutter_application_1/esqueci_a_senha.dart';
 import 'package:flutter_application_1/main.dart';
-
-void main() {
-  runApp(const LoginVeterinario());
-}
 
 class LoginVeterinario extends StatelessWidget {
   const LoginVeterinario({super.key});
@@ -121,7 +118,10 @@ class _LoginPageState extends State<LoginPage> {
                       // Botão "Entrar"
                       ElevatedButton(
                         onPressed: () {
-                          _login();
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const AnimaisDisponiveisVet()),
+                          );
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.brown,

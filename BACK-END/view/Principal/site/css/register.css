@@ -17,7 +17,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #d7c481;
+    background: #bb9a6d;
 }
 
 .container {
@@ -290,6 +290,7 @@ p {
     height: 100px;
     object-fit: cover;
     margin-right: 10px;
+    cursor: pointer;
 }
 #dateOfBirth {
     width: 100%; /* Define a largura para ocupar toda a área disponível */
@@ -307,4 +308,9 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+label[for="profilePhoto"] {
+    overflow: hidden;
+    border-radius: 50%;
 }

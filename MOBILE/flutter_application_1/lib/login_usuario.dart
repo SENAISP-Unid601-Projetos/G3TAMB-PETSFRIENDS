@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/animais_disponiveis.dart';
 import 'package:flutter_application_1/cadastro_usuario.dart';
 import 'package:flutter_application_1/esqueci_a_senha.dart';
-import 'package:flutter_application_1/main.dart'; // Supondo que MyApp seja a página inicial
+import 'package:flutter_application_1/login_adm.dart';
 
 void main() {
   runApp(const LoginUsuario());
@@ -41,12 +41,7 @@ class _LoginPageState extends State<LoginPage> {
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.arrow_back), // Ícone de seta
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => MyApp()), // Voltar para a página inicial
-            );
-          },
+          onPressed: () {},
         ),
       ),
       body: Stack(
@@ -125,10 +120,9 @@ class _LoginPageState extends State<LoginPage> {
                           // Botão "Entrar"
                           ElevatedButton(
                             onPressed: () {
-                              _login();
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => const AnimaisDisponiveis()),
+                                MaterialPageRoute(builder: (context) => const AnimaisDisponiveis()), // Adicione a tela LoginAdministrador
                               );
                             },
                             style: ElevatedButton.styleFrom(
@@ -145,7 +139,7 @@ class _LoginPageState extends State<LoginPage> {
                               // Navegar para a tela de login do administrador (crie esta tela conforme necessário)
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => const CadastroUsuario()), // Adicione a tela LoginAdministrador
+                                MaterialPageRoute(builder: (context) => const LoginAdm()), // Adicione a tela LoginAdministrador
                               );
                             },
                             style: ElevatedButton.styleFrom(

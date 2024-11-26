@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/animais_disponiveis.dart';
 import 'package:flutter_application_1/cancelar_adocao.dart';
-import 'package:flutter_application_1/main.dart';
-import 'animais_disponiveis.dart';
 
-void main() {
-  runApp(const PerfilUsuario());
-}
+import 'main.dart';
 
 class PerfilUsuario extends StatelessWidget {
   const PerfilUsuario({super.key});
@@ -42,7 +39,7 @@ class _PerfilUsuarioPageState extends State<PerfilUsuarioPage> {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => AnimaisDisponiveis()),
+              MaterialPageRoute(builder: (context) => const AnimaisDisponiveis()), // Adicione a tela LoginAdministrador
             );
           },
         ),
@@ -107,11 +104,11 @@ class _PerfilUsuarioPageState extends State<PerfilUsuarioPage> {
               leading: Icon(Icons.list),
               title: Text('Animais Disponíveis para Adoção'),
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => AnimaisDisponiveis()),
-                );
-              },
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AnimaisDisponiveis()),
+              );
+            },
             ),
            Divider(),
 ListTile(
@@ -147,40 +144,6 @@ ListTile(
     );
   },
 ),
-
-        
-  
-                        
-               ListTile(
-              leading: Icon(Icons.logout),
-              title: Text('Apagar a conta'),
-              onTap: () {
-                showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return AlertDialog(
-                      title: Text('Confirmação'),
-                      content: Text('Tem certeza que deseja apagar sua conta?'),
-                      actions: [
-                        TextButton(
-                          child: Text('Cancelar'),
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                          },
-                        ),
-                        TextButton(
-                          child: Text('Apagar a conta'),
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                            // Adicione aqui a ação de logout
-                          },
-                        ),
-                      ],
-                    );
-                  },
-                );
-              },
-            ),
           ],
         ),
       ),

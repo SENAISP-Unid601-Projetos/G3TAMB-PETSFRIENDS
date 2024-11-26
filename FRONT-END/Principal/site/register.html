@@ -23,11 +23,14 @@
                         <br>
                         <h1>Cadastre-se</h1>
                     </div>
-                    <p>Já tem uma conta? <a href="login.html">Faça login aqui</a>.</p>
+                    <p>Já tem uma conta? <a href="login">Faça login aqui</a>.</p>
                 </div>
                 <!-- Foto de perfil e câmera -->
                 <div class="profile-box">
-                    <img id="profilePhoto" src="images/icone2.png" alt="Foto de perfil padrão" onclick="openCamera()">
+                    <label for="profilePhoto">
+                        <img src="images/icone2.png" alt="Foto de perfil padrão">
+                    </label>
+                    <input type="file" accept="image/*" id="profilePhoto" name="profilePhoto" style="display: none;">
                 </div>
                 <div class="input-group">
                     <!-- Nome completo -->
@@ -93,6 +96,7 @@
     </div>
 
     <script src="js/register.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 

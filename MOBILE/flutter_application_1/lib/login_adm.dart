@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/animais_disponiveis_adm.dart';
+import 'main.dart';
 
 void main() {
   runApp(const LoginAdm());
@@ -34,7 +36,20 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text('Login ADM'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const MyApp()), // Adicione a tela LoginAdministrador
+              );
+            },
+          ),
+        ],
+      ),
       body: Stack(
         children: [
           // Imagem de fundo
@@ -107,7 +122,10 @@ class _LoginPageState extends State<LoginPage> {
                       // Botão "Entrar"
                       ElevatedButton(
                         onPressed: () {
-                          _login();
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const AnimaisDisponiveisAdm()),
+                          );
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.brown,

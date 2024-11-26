@@ -1,5 +1,5 @@
 async function loginAdmin() {
-    localStorage.removeItem("dadosUsuario");
+    localStorage.clear();
 
     // Definindo e-mail e senha fixos
     const emailFixo = document.querySelector("#email").value;
@@ -25,7 +25,7 @@ async function loginAdmin() {
             throw "Nenhum usuário foi encontrado com os dados inseridos!";
         }
         const tratado = dados.conteudo[0];
-        localStorage.setItem("dadosUsuario", JSON.stringify(tratado));
+        localStorage.setItem("dadosAdministrador", JSON.stringify(tratado));
         open("/TelaAnimalAdm", "_self");
     })
     .catch((erro) => {

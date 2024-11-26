@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/animais_disponiveis.dart';
 import 'package:flutter_application_1/questionario.dart';
 
 void main() {
@@ -70,12 +69,7 @@ class AdocaoPage extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.arrow_back), // Ícone de seta
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => AnimaisDisponiveis()),
-            );// Voltar para a página anterior
-          },
+          onPressed: () {},
         ),
         title: Text('Detalhes do ${animal.Nome}'),
       ),
